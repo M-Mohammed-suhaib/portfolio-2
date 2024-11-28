@@ -1,0 +1,188 @@
+/* Wrapper class to isolate styles for this page/component */
+.project-tree {
+    font-family: 'Poppins', sans-serif;
+    background: #000000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+/* Main title styling */
+.project-tree .main-title {
+    margin-bottom: 20px;
+}
+
+.project-tree .main-title h1 {
+    font-size: clamp(1.5rem, 4vw, 3rem); /* Scalable font size */
+    font-weight: bold;
+    color: #0cd8ce;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #4ecca3, 0 0 20px #00b0b9, 0 0 30px #4ecca3;
+}
+
+/* Container holding the entire tree */
+.project-tree .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+    gap: 2rem;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Node styling */
+.project-tree .node {
+    background: #212121;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 350px;
+    height: 350px;
+    box-shadow: 0 10px 30px rgba(144, 202, 249, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Stack title and image vertically */
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(145deg, #333333, #424242);
+    border: 4px solid #4ecca3;
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Hover effect for nodes */
+.project-tree .node:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(144, 202, 249, 0.8);
+}
+
+/* Title (Project Title) */
+.project-tree h2 {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    margin-bottom: 10px;
+    text-shadow: 0px 4px 8px rgba(14, 123, 121, 0.8);
+}
+
+/* Image inside the box */
+.project-tree .thumbnail {
+    width: 100%;
+    height: calc(100% - 50px); /* Fill remaining space below the title */
+    object-fit: cover; /* Maintain aspect ratio and cover the box */
+    border-radius: 8px; /* Rounded corners for images */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .project-tree .container {
+        grid-template-columns: 1fr 1fr; /* 2 columns on small screens */
+    }
+    .project-tree .node {
+        margin-bottom: 20px; /* Add space between nodes */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-tree .container {
+        grid-template-columns: 1fr; /* Stack the projects on very small screens */
+    }
+    .project-tree .node {
+        margin-bottom: 15px; /* Add space between nodes */
+    }
+}
+
+/* Special case for large screens and less than 3 boxes */
+.project-tree .container {
+    justify-content: center; /* Ensure the items are centered */
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.project-tree .container a {
+    flex: 1 0 350px; /* Flex basis with a fixed size */
+    margin: 10px;
+}
+
+/* If there are 4 boxes, make sure they don't fit in one row */
+.project-tree .container {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Auto-fill for 3+ boxes */
+}
+
+
+
+/* Section Styling */
+.ftco-section.ftco-hireme {
+    background-color: #ffffff; /* White background */
+    background-size: cover; /* Ensure the background image covers the whole section */
+    background-position: center; /* Center the background image */
+    width: 100%; /* 100% of screen width */
+    height: 60vh; /* 60% of the viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+/* Heading Styling */
+.ftco-section.ftco-hireme h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff; /* Dark text color */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Styling for the span inside the heading */
+.ftco-section.ftco-hireme h2 span {
+    color: #47969d; /* Accent color for the span text */
+}
+
+/* Styling for the heading line */
+.ftco-section.ftco-hireme .heading h4 {
+    border-top: 2px solid #27a0b0; /* Purple line */
+    width: 100px; /* Make the line narrower */
+    margin: 10px auto;
+}
+
+/* Button Styling */
+.ftco-section.ftco-hireme .btn {
+    background-color: #2797b0; /* Accent color */
+    color: white;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect for Button */
+.ftco-section.ftco-hireme .btn:hover {
+    background-color: #435156; /* Slightly darker on hover */
+    transform: translateY(-5px); /* Lift the button on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .ftco-section.ftco-hireme h2 {
+        font-size: 2rem;
+    }
+
+    .ftco-section.ftco-hireme .btn {
+        padding: 10px 25px;
+    }
+}

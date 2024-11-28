@@ -1,0 +1,225 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000; /* Set background to black */
+    color: #fff; /* White text for contrast */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 15px;
+}
+
+/* Heading Styles */
+.big {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #00b0b9; /* Tomato color for titles */
+    text-transform: uppercase;
+}
+
+.big-2 {
+    font-size: 4rem;
+    color: #fff;
+}
+
+.big-4 {
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .underline {
+    width: 50px;
+    height: 5px;
+    background-color: #00b0b9;
+    margin: 10px auto;
+} */
+
+/* Section Styles */
+.ftco-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.heading-section h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.resume-wrap {
+    background-color: #222;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 2px solid #00b0b9; /* Replaced blue border with yellow */
+    box-shadow: 0 4px 8px rgba(56, 136, 144, 0.6); /* Yellowish shadow */
+}
+
+.resume-wrap .date {
+    font-size: 1.2rem;
+    color: #ff6347;
+    font-weight: 500;
+}
+
+.resume-wrap h2 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.resume-wrap .position {
+    font-size: 1.4rem;
+    color: #ddd;
+}
+
+.resume-wrap p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #bbb;
+}
+
+.resume-wrap ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.resume-wrap ul li {
+    margin-bottom: 10px;
+}
+
+.resume-wrap a.btn {
+    background-color: #ff6347;
+    padding: 12px 20px;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.resume-wrap a.btn:hover {
+    background-color: #e55347;
+}
+
+/* Blueprint Style Education Section (Family Tree) */
+.blueprint-family-tree {
+    position: relative;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Parent Box (Root of the Family Tree) */
+.parent-box {
+    position: relative;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.parent-box .resume-wrap {
+    width: 350px;
+    background: #0f0f0f;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #00b0b9; /* Same yellow border as other sections */
+    box-shadow: 0px 8px 15px rgba(56, 136, 144, 0.6); /* Yellowish shadow */
+    text-align: center;
+}
+
+/* Child Boxes (Branches from the Parent) */
+.children {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 50px;
+}
+
+.child-box {
+    width: 40%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.child-box .resume-wrap {
+    width: 350px;
+    background: #0f0f0f;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #00b0b9; /* Same yellow border */
+    box-shadow: 0px 8px 15px rgba(56, 136, 144, 0.6); /* Yellowish shadow */
+    text-align: center;
+}
+
+/* Wire Connections (Lines between Parent and Child boxes) */
+.parent-box::after,
+.child-box::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    background-color: #4ecca3; /* Yellow color for connection lines */
+}
+
+.parent-box::after {
+    height: 50px;
+    top: 100%;
+    z-index: -1;
+}
+
+.child-box::after {
+    height: 50px;
+    top: -50px;
+    z-index: -1;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .blueprint-family-tree {
+        flex-direction: column;
+    }
+
+    .children {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .child-box {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Styled Horizontal Line */
+.styled-hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #4ecca3, #00b0b9, #4ecca3);
+    margin: 20px 0;
+    position: relative;
+}
+
+.styled-hr:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

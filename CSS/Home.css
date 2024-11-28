@@ -1,0 +1,455 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #000000; /* Black background */
+  color: #e0e0e0; /* Light gray text for general readability */
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  padding: 20px;
+}
+
+.navbar .navbar-brand {
+  color: #ffffff; /* White text for the brand */
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.navbar .navbar-nav .nav-link {
+  color: #b0b0b0; /* Light gray for links */
+  margin: 0 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: #f0f0f0; /* Slightly lighter gray when hovered */
+}
+
+/* Home Section */
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000; /* Black background */
+  position: relative;
+  padding-top: 80px; /* To avoid navbar overlap */
+  overflow: hidden;
+}
+
+/* Left Section (Name, Title, and Buttons) */
+.hero .text {
+  max-width: 60%;
+  padding: 20px;
+  text-align: left;
+  z-index: 1;
+}
+
+/* Heading Animation */
+.hero h1 {
+  font-size: 78px;
+  margin-bottom: 10px;
+  font-weight: 900;
+  color: #f1f1f1; /* Light white color for the heading */
+  animation: slideInFromLeft 2s ease-out forwards;
+}
+
+/* Subtitle Animation */
+.hero h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #a1c4fd; /* Light pastel blue for subtitle */
+  opacity: 0;
+  animation: slideInFromLeft 2s ease-out 1s forwards; /* Delay for subtitle */
+}
+
+/* Button Styling for LinkedIn-inspired look */
+.navbar .navbar-nav .nav-link {
+  color: #b0b0b0; /* Light gray text for links */
+  margin: 0 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: #ffffff; /* White text on hover */
+  background-color: #0077b5; /* LinkedIn blue background on hover */
+  border-radius: 5px; /* Smooth edges */
+}
+
+.navbar .navbar-nav .nav-link:active {
+  color: #ffffff; /* White text when clicked */
+  background-color: #005c8e; /* Darker blue when clicked (active state) */
+}
+
+/* Buttons in the Hero Section */
+.hero p a {
+  margin-right: 15px;
+  text-decoration: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.hero .btn-primary {
+  background: linear-gradient(135deg, #4ecca3, #00b0b9); /* Light teal to cyan gradient */
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.hero .btn-primary:hover {
+  background: linear-gradient(135deg, #00b0b9, #4ecca3); /* Inverted gradient on hover */
+}
+
+.hero .btn-primary:active {
+  background-color: #0077b5; /* LinkedIn blue on click */
+  color: white; /* Maintain white text */
+}
+
+.hero .btn-white {
+  background-color: transparent;
+  border: 2px solid #f1f1f1; /* Light gray border */
+  color: #f1f1f1; /* Light gray text */
+  transition: all 0.3s ease;
+}
+
+.hero .btn-white:hover {
+  background-color: #f1f1f1;
+  color: black; /* Black text on hover */
+}
+
+.hero .btn-white:active {
+  background-color: #0077b5; /* LinkedIn blue on click */
+  color: white; /* White text when clicked */
+}
+
+/* Hero Section Adjustments for active/hover effect on buttons */
+.hero .text a:active {
+  background-color: #0077b5; /* LinkedIn blue when clicked */
+  color: white; /* White text on active state */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Additional styling for active states on Navbar and buttons */
+.navbar .navbar-nav .nav-link:active {
+  background-color: #0077b5; /* LinkedIn blue when clicked */
+  color: #ffffff; /* White text when clicked */
+}
+
+.navbar .navbar-nav .nav-link:focus {
+  outline: none; /* Remove focus outline for a cleaner look */
+  background-color: #0077b5; /* LinkedIn blue when focused */
+  color: #ffffff; /* White text on focus */
+}
+
+/* Active button states for better user experience */
+.hero p a:active {
+  background-color: #0077b5; /* LinkedIn blue on active */
+  color: white; /* Maintain white text */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Animated active state for buttons (soft transition) */
+.hero .btn-primary:active,
+.hero .btn-white:active {
+  transform: scale(0.95); /* Button shrink slightly on click */
+}
+
+/* Adding LinkedIn blue as border for active button states */
+.hero .btn-primary:active {
+  border: 2px solid #005c8e; /* Darker LinkedIn blue border on active */
+}
+
+.hero .btn-white:active {
+  border: 2px solid #005c8e; /* Darker LinkedIn blue border on active */
+}
+
+/* Image Section */
+.suhaib-img {
+  width: 100%; /* Full width of its container */
+  height: 100vh; /* Set the height to cover the full viewport height */
+  background-image: url('Screenshot\ 2024-11-19\ 202422.png');
+  background-size: cover; /* Ensure the image fully covers the container */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center center; /* Keeps the image centered */
+  position: relative;
+  z-index: 1;
+  filter: grayscale(80%) brightness(0.8); /* Increased brightness from 0.6 to 0.8 */
+}
+
+.suhaib-img .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Slightly lighter overlay for better contrast */
+  z-index: 2;
+}
+
+
+/* Media Queries for responsiveness */
+
+/* For screens larger than 991px (Desktop/Laptop) */
+@media screen and (min-width: 992px) {
+  .suhaib-img {
+      background-size: 75%; /* Slightly smaller image on larger screens */
+      height: 75vh; /* Further reduce height for better balance */
+  }
+}
+
+/* For tablet screens (max-width: 991px) */
+@media screen and (max-width: 991px) {
+  .suhaib-img {
+      background-size: 100%; /* Keep image at full size for tablets */
+      height: 60vh; /* Adjust height for tablets */
+  }
+}
+
+/* For mobile screens (max-width: 767px) */
+@media screen and (max-width: 767px) {
+  .suhaib-img {
+      height: 55vh; /* Slightly taller for mobile devices to make the image more prominent */
+      background-size: 110%; /* Make image a little bigger on mobile */
+  }
+}
+
+/* Typing animation */
+#typing-animation {
+  font-size: 22px;
+  font-weight: 500;
+  color: #a1c4fd; /* Light blue for typing animation */
+  margin-top: 10px;
+  display: inline-block;
+}
+
+/* Sliding Animation */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 991px) {
+  .hero {
+      flex-direction: column;
+  }
+
+  .hero .text {
+      max-width: 100%;
+      text-align: center;
+      padding: 50px;
+  }
+
+  .hero h1 {
+      font-size: 36px;
+  }
+
+  .hero h2 {
+      font-size: 24px;
+  }
+
+  .suhaib-img {
+      width: 100%;
+      height: 50vh;
+      margin-top: 2px;
+      left: 0;
+  }
+
+  .hero .btn-primary,
+  .hero .btn-white {
+      font-size: 14px;
+      padding: 8px 20px;
+      margin: 5px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .navbar .navbar-brand {
+      font-size: 20px;
+  }
+
+  .navbar .navbar-nav .nav-link {
+      font-size: 14px;
+  }
+
+  .hero h1 {
+      font-size: 32px;
+  }
+
+  .hero h2 {
+      font-size: 22px;
+  }
+
+  .suhaib-img {
+      height: 55vh; /* Slightly bigger image on mobile */
+      background-size: 110%; /* Make image a little larger on mobile */
+  }
+
+  .hero .text {
+      text-align: center;
+      padding: 20px;
+  }
+
+  .hero .btn-primary,
+  .hero .btn-white {
+      font-size: 12px;
+      padding: 8px 20px;
+      margin: 5px;
+  }
+}
+
+/* Styled Horizontal Line */
+.styled-hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, #4ecca3, #00b0b9, #4ecca3); /* Light teal to cyan gradient */
+  margin: 20px 0;
+  position: relative;
+}
+
+.styled-hr:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: #4ecca3; /* Light teal circle */
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+.contact-section {
+  text-align: center;
+  padding: 2rem;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.contact-item {
+  width: 200px;
+  margin: 1rem;
+}
+
+.icon {
+  font-size: 2rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #ccc;
+}
+
+p {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #fff;
+}
+
+.question-row {
+  margin: 2rem 0;
+}
+
+.cta-button {
+  background-color: #fff;
+  color: #000;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #ccc;
+  color: #000;
+}
+
+.social-row {
+  margin-top: 2rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #ccc;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  color: #fff;
+}
+
+#contact-header{
+  display: flex;
+  justify-content: center;
+
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Space between icons */
+  }
+  
+  .social-icon {
+    font-size: 2rem; /* Size of the icons */
+    text-decoration: none; /* Remove underline */
+    color: #ccc; /* Gray color */
+    transition: transform 0.3s, color 0.3s; /* Smooth hover effect */
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.2); /* Enlarge on hover */
+    color: #fff; /* Change to white on hover */
+  }
+  }

@@ -1,0 +1,213 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #1a1a1a, #2c2c2c, #48475e, #5f7589, #1a1a1a);
+    background-size: 400% 400%;
+    animation: rotatingGradient 12s ease infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes rotatingGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Button Container */
+.button-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.home-button {
+    color: #fff;
+    background-color: #333;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.home-button:hover {
+    background-color: #555;
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Container Styling */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 0;
+    padding-bottom: 20px;
+    color: #f4f4f9;
+    font-weight: bold;
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+    gap: 60px; /* Increased space between items */
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.project {
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 280px; /* Reduced width for a more compact look */
+    text-align: center;
+    padding: 20px;
+}
+
+.project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.project h2 {
+    color: #ffffff;
+    font-size: 1.4em; /* Slightly smaller title */
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.description {
+    padding: 10px;
+    font-size: 1em;
+    color: #e3e3e3;
+    line-height: 1.6;
+}
+
+.description p {
+    margin: 0;
+}
+
+/* Image and Fullscreen */
+.image-container {
+    margin-bottom: 20px;
+}
+
+.project-image {
+    width: 100%;
+    height: 180px; /* Maintain consistent image size */
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.project-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.6);
+}
+
+.fullscreen-button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    background-color: #ffffff;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.fullscreen-button:hover {
+    background-color: #789bc1;
+    color: #fff;
+}
+
+/* Fullscreen Styling */
+.fullscreen-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.fullscreen-image {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.fullscreen-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 12px 18px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: background-color 0.3s;
+}
+
+.fullscreen-close:hover {
+    background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .project-grid {
+        grid-template-columns: 1fr; /* 1 item per row for very small screens */
+    }
+}

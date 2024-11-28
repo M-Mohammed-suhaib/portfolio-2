@@ -1,0 +1,334 @@
+:root {
+    --black-bg: #000000; /* Dark black background */
+    --light-gray-text: #e0e0e0; /* Light gray text for better readability */
+    --white: #ffffff; /* White */
+    --light-gray: #f5f5f5; /* Soft light gray */
+    --light-pastel-blue: #a1c4fd; /* Light pastel blue */
+    --medium-light-gray: #b0b0b0; /* Medium light gray */
+    --light-teal: #4ecca3; /* Light teal */
+    --cyan: #00b0b9; /* Cyan */
+    --linkedin-blue: #0077b5; /* LinkedIn blue */
+    --dark-linkedin-blue: #005c8e; /* Darker LinkedIn blue */
+    --soft-coral: #00b0b9; /* Soft coral */
+    --gold: #ffffff; /* Gold */
+    --vivid-pink: #fbf7f9; /* Vivid pink for crazy contrast */
+    --neon-green: #55b39e; /* Neon green for pop */
+    --electric-blue: #1e90ff; /* Electric blue for vibrant accents */
+    --gradient-bg: linear-gradient(135deg, #00b0b9, #4ecca3); /* Crazy inverted gradient */
+    --lighter-gray-text: #d1d1d1; /* Lighter gray for secondary text */
+    --highlight-text: #ffffff; /* Highlighted text in white */
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Body */
+body {
+    background: var(--black-bg); /* Dark black background */
+    color: var(--lighter-gray-text); /* Default text color */
+    font-size: 16px;
+    line-height: 1.6;
+    padding-top: 70px; /* Prevent navbar overlap */
+}
+
+/* About Section */
+#about-section {
+    padding: 40px 15px;
+}
+
+/* Container */
+.container {
+    max-width: 1200px; /* Larger screen size */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Wrapper for profile and about sections */
+.about-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns layout */
+    gap: 20px;
+    align-items: stretch; /* Make sections equal height */
+}
+
+/* Left Section (Profile) */
+.profile-section {
+    background-color: rgba(88, 98, 99, 0.7); /* Darker background for profile section */
+    border-radius: 15px;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 400px; /* Same height for both boxes */
+}
+
+/* Certificate Box */
+.certificate-box {
+    margin-top: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--light-teal), var(--electric-blue));
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: var(--white);
+}
+
+.certificate-heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--gold); /* Gold heading */
+    margin-bottom: 10px;
+}
+
+.certificate-description {
+    font-size: 18px;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.btn-certificate {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--neon-green); /* Neon green for vibrant CTA */
+    color: var(--black-bg);
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-certificate:hover {
+    background-color: var(--electric-blue); /* Electric blue hover */
+    transform: scale(1.05);
+}
+
+
+.profile-img-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--soft-coral); /* Soft coral border */
+    background: #494949; /* Match the background color */
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 126, 95, 0.7); /* Soft glowing shadow */
+    filter: grayscale(100%); /* Make the image black and white */
+}
+
+.profile-img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 0 25px rgba(255, 126, 95, 0.9); /* Intensified shadow on hover */
+    filter: grayscale(0%); /* Return image to color on hover */
+}
+
+.profile-info {
+    color: var(--lighter-gray-text); /* Lighter gray for general text */
+    padding: 15px;
+}
+
+.name {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--white); /* White title */
+}
+
+.job {
+    font-size: 20px;
+    color: var(--electric-blue); /* Electric blue for job role */
+}
+
+.location {
+    font-size: 18px;
+    color: var(--vivid-pink); /* Vivid pink for location */
+    margin: 10px 0;
+}
+
+/* Right Section (About Text) */
+.about-me {
+    background: linear-gradient(to right, #565a58, #2c3435, #3f4140); /* Gradient background for the text box */
+    border-radius: 15px;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    min-height: 400px; /* Same height for both boxes */
+}
+
+.about-heading {
+    font-size: 36px;
+    color: var(--white); /* White title */
+    margin-bottom: 15px;
+}
+
+.about-description {
+    font-size: 22px; /* Increased font size for paragraph */
+    color: var(--white); /* White text color for better contrast */
+    margin-bottom: 20px;
+    line-height: 1.8; /* Increased line height for better readability */
+}
+
+.details {
+    list-style-type: none;
+}
+
+.details li {
+    font-size: 18px;
+    line-height: 2;
+    color: var(--lighter-gray-text); /* Lighter gray for list items */
+}
+
+.details span {
+    font-weight: bold;
+    color: var(--soft-coral); /* Soft coral color for labels */
+}
+
+/* LinkedIn button */
+.btn-linkedin {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--linkedin-blue); /* LinkedIn blue */
+    color: var(--white);
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-linkedin:hover {
+    background-color: var(--dark-linkedin-blue); /* Darker blue on hover */
+}
+
+/* Styled Horizontal Line */
+.styled-hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, var(--electric-blue), var(--vivid-pink), var(--neon-green)); /* Crazy color gradient */
+    margin: 20px 0;
+    position: relative;
+}
+
+.styled-hr:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: var(--electric-blue); /* Electric blue circle */
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+/* Media Queries for Responsiveness */
+
+/* Large Screens (Desktop/Laptop) */
+@media (min-width: 992px) {
+    .about-wrapper {
+        grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+    }
+
+    .profile-img-wrapper {
+        width: 250px;
+        height: 250px; /* Larger profile image */
+    }
+
+    .profile-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .about-heading {
+        font-size: 40px; /* Larger heading on big screens */
+    }
+
+    .about-description {
+        font-size: 22px; /* Larger paragraph text */
+    }
+}
+
+/* Tablets and Smaller Screens */
+@media (max-width: 991px) {
+    .about-wrapper {
+        grid-template-columns: 1fr; /* Stack sections vertically */
+    }
+
+    .profile-section, .about-me {
+        width: 100%;
+    }
+
+    .profile-img-wrapper {
+        width: 180px;
+        height: 180px; /* Smaller image for tablets */
+    }
+
+    .profile-info {
+        text-align: center;
+    }
+
+    .about-heading {
+        font-size: 32px;
+    }
+
+    .about-description {
+        font-size: 20px; /* Adjust paragraph size */
+    }
+}
+
+/* Small Mobile Screens */
+@media (max-width: 767px) {
+    body {
+        font-size: 14px; /* Smaller font size for small screens */
+    }
+
+    .profile-info {
+        text-align: center;
+    }
+
+    .profile-img-wrapper {
+        width: 150px;
+        height: 150px; /* Smaller profile image */
+    }
+
+    .profile-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .about-heading {
+        font-size: 24px;
+    }
+
+    .about-description {
+        font-size: 18px; /* Smaller paragraph text */
+    }
+
+    .details li {
+        font-size: 14px;
+    }
+
+    .btn-linkedin {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+
