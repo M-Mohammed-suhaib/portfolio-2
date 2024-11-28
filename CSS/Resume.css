@@ -38,7 +38,7 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 3px;
-    text-shadow: 0 0 15px #4ecca3, 0 0 25px #00b0b9, 0 0 35px #ff4c4c; /* Glowing text effect */
+    text-shadow: 0 0 15px #4ecca3, 0 0 25px #00b0b9, 0 0 35px #00b0b9; /* Glowing text effect */
     animation: glow 1.5s ease-in-out infinite alternate, slideIn 1s ease-out; /* Glow and Slide-in animation */
 }
 
@@ -48,7 +48,7 @@ body {
         text-shadow: 0 0 10px #4ecca3, 0 0 20px #00b0b9, 0 0 30px #4ecca3;
     }
     100% {
-        text-shadow: 0 0 25px #4ecca3, 0 0 35px #00b0b9, 0 0 45px #ff4c4c;
+        text-shadow: 0 0 25px #4ecca3, 0 0 35px #00b0b9, 0 0 45px #00b0b9;
     }
 }
 
@@ -94,7 +94,7 @@ body {
 
 .resume-wrap .date {
     font-size: 1.2rem;
-    color: #ff6347;
+    color: #00b0b9  ;
     font-weight: 500;
 }
 
@@ -125,7 +125,7 @@ body {
 }
 
 .resume-wrap a.btn {
-    background-color: #ff6347;
+    background-color: #00b0b9;
     padding: 12px 20px;
     color: #fff;
     border-radius: 5px;
@@ -134,7 +134,7 @@ body {
 }
 
 .resume-wrap a.btn:hover {
-    background-color: #e55347;
+    background-color: #10808c;
 }
 
 /* Blueprint Style Education Section (Family Tree) */
