@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="CSS/about.css">
     <link rel="stylesheet" href="CSS/Resume.css">
     <link rel="stylesheet" href="CSS/Projects.css">
+    <link rel="stylesheet" href="CSS/Contact.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
 </head>
@@ -63,7 +64,10 @@
 
 <!-- About Section -->
 <section id="about-section">
+    <h2 id="contact-header">About</h2>
+    
     <div class="container">
+        
         <div class="about-wrapper">
             <!-- Left Section with Profile Image & Info -->
             <div class="profile-section">
@@ -117,7 +121,7 @@
         </div>
 
         <div class="row">
-            <h1 class="big-4">Experience</h1>
+            <h2 id="contact-header">Experience</h2>
             <!-- <div class="underline"></div> -->
         </div>
         <br>
@@ -145,7 +149,7 @@
         <br>
 
         <div class="row">
-            <h1 class="big-4">Education</h1>
+            <h2 id="contact-header">Education</h2>
             <!-- <div class="underline"></div> -->
         </div>
         <br>
@@ -187,7 +191,8 @@
 <section id="project-section">
     <div class="project-tree">
         <div class="main-title">
-            <h1>Project Tree</h1>
+            
+            <h2 id="contact-header">Project Tree</h2>
         </div>
         <div class="container">
             <!-- Each project links to a specific HTML page -->
@@ -208,59 +213,53 @@
 
 <hr class="styled-hr"> <!-- Add break line here -->
 
-<!-- Contact Section -->
 <section id="contact-section">
-    <div class="container">
-        <h2 id="contact-header">Contact</h2>
-        
-        <div class="contact-section">
-            <div class="contact-row">
-              <div class="contact-item">
-                <div class="icon">📍</div>
-                <h3>ADDRESS</h3>
-                <p>Bengaluru, India</p>
-              </div>
-              <div class="contact-item">
-                <div class="icon">📞</div>
-                <h3>CONTACT NUMBER</h3>
-                <p>+918056253501</p>
-              </div>
-              <div class="contact-item">
-                <div class="icon">✉️</div>
-                <h3>EMAIL ADDRESS</h3>
-                <p>m.mohammedsuhaib04@gmail.com</p>
-              </div>
-              <div class="contact-item">
-                <div class="icon">🌐</div>
-                <h3>DOWNLOAD RESUME</h3>
-                <p><a href="resumelink" target="_blank">resumelink</a></p>
-              </div>
+    <h2 id="contact-header">Contact</h2>
+    <div class="contact-row">
+        <!-- Address -->
+        <div class="contact-item">
+            <div class="icon">
+                <a href="https://maps.google.com?q=Bengaluru" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
             </div>
-        
-            
-        
-            <div class="social-row">
-              <div class="social-row">
-                <div class="social-icons">
-                  <!-- Facebook -->
-                  <a href="#" target="_blank" class="social-icon">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  <!-- Instagram -->
-                  <a href="#" target="_blank" class="social-icon">
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                  <!-- LinkedIn -->
-                  <a href="#" target="_blank" class="social-icon">
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                </div>
-              </div>
-              
+            <h3>Address</h3>
+            <p><a href="https://maps.google.com?q=Bengaluru" target="_blank">Bengaluru, India</a></p>
+        </div>
+        <!-- Phone -->
+        <div class="contact-item">
+            <div class="icon">
+                <a href="tel:+918056253501"><i class="fas fa-mobile-alt"></i></a>
             </div>
-          </div>        
+            <h3>Contact Number</h3>
+            <p><a href="tel:+918056253501">+91 8056 253501</a></p>
+        </div>
+        <!-- Email -->
+        <div class="contact-item">
+            <div class="icon">
+                <a href="mailto:m.mohammedsuhaib04@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <h3>Email</h3>
+            <p><a href="mailto:m.mohammedsuhaib04@gmail.com">m.mohammedsuhaib04@gmail.com</a></p>
+        </div>
+        <!-- Resume -->
+        <div class="contact-item">
+            <div class="icon">
+                <a href="resumelink" target="_blank"><i class="fas fa-file-download"></i></a>
+            </div>
+            <h3>Download Resume</h3>
+            <p><a href="resumelink" target="_blank">Click to Download</a></p>
+        </div>
+    </div>
+    <div class="social-row">
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
     </div>
 </section>
+
+
+
+
+
 
 <script src="JS/home.js"></script>
 <script src="JS/about.js"></script>

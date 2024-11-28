@@ -1,102 +1,183 @@
 /* Contact Section */
 #contact-section {
-    background: linear-gradient(145deg, #212121, #333333);
+    background: #000000; /* Dark background for contrast */
     color: #fff;
-    padding: 60px 0;
+    padding: 80px 20px;
     font-family: 'Poppins', sans-serif;
     position: relative;
-    overflow: hidden;
+    text-align: center;
 }
 
 /* Heading Section */
-#contact-section .heading-section {
-    margin-bottom: 30px;
-}
-
-#contact-section .heading-section h1 {
-    font-size: clamp(2rem, 5vw, 4rem);
+#contact-header {
+    font-size: clamp(3rem, 5vw, 4.5rem);
     font-weight: bold;
-    color: #0cd8ce;
+    color: #e2deeb;
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
+    margin-bottom: 50px;
     text-shadow: 0 0 15px #4ecca3, 0 0 25px #00b0b9;
     animation: glow 1.5s ease-in-out infinite alternate;
 }
 
-#contact-section .heading-section h2 {
-    font-size: 1.8rem;
-    font-weight: 500;
-    color: #fff;
-    margin-bottom: 15px;
+/* Contact Row */
+.contact-row {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
-#contact-section .heading-section p {
-    color: #ccc;
-    font-size: 1rem;
-    font-weight: 300;
-}
-
-/* Contact Icons */
-#contact-section .contact-info .contact-icon {
+/* Contact Items */
+.contact-item {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Effects */
+.contact-item:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Circular Icons */
+.contact-item .icon {
     font-size: 3rem;
-    color: #0cd8ce;
-    background-color: #212121;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ff4c4c, #4ecca3); /* Gradient circle */
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    margin: 20px;
-    box-shadow: 0 0 15px rgba(72, 253, 223, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    text-decoration: none; /* Remove underline from links */
 }
 
-#contact-section .contact-info .contact-icon:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 30px rgba(72, 253, 223, 1);
-    background-color: #4ecca3;
+/* Specific Icon Colors */
+.contact-item:nth-child(1) .icon {
+    background: #ff4c4c; /* Red for Address */
+}
+
+.contact-item:nth-child(2) .icon {
+    background: #4ecca3; /* Green for Phone */
+}
+
+.contact-item:nth-child(3) .icon {
+    background: #4a90e2; /* Blue for Email */
+}
+
+.contact-item:nth-child(4) .icon {
+    background: #f1c40f; /* Yellow for Resume */
+}
+
+/* Contact Item Titles */
+.contact-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
     color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-/* Contact Info Text */
-#contact-section .contact-info .contact-icon p {
-    margin-top: 10px;
-    font-size: 1rem;
+/* Contact Item Paragraphs */
+.contact-item p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #ccc;
+    margin: 0;
+    display: inline-flex; /* Ensures the text stays in one line */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Links Styling */
+.contact-item a {
+    color: #fff;
+    text-decoration: none;
     font-weight: 500;
-    color: #fff;
-    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
 }
 
-/* Social Media Icons */
-#contact-section .ftco-footer-social a {
-    font-size: 2.5rem;
-    color: #0cd8ce;
-    margin: 0 20px;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-#contact-section .ftco-footer-social a:hover {
-    transform: scale(1.2);
+.contact-item a:hover {
     color: #4ecca3;
 }
 
-/* Resume Button */
-#contact-section .btn {
-    background-color: #0cd8ce;
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
+/* Social Row */
+.social-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
 }
 
-#contact-section .btn:hover {
-    background-color: #4ecca3;
+/* Social Icons */
+.social-icon {
+    font-size: 2.5rem;
+    color: #0cd8ce;
+    background: linear-gradient(145deg, #1a1a1a, #2b2b2b);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    color: #4ecca3;
+    box-shadow: 0 12px 25px rgba(72, 253, 223, 0.8);
+}
+
+/* Hover Effects for Contact Items */
+.contact-item:hover .icon {
+    transform: scale(1.2);
+    background-color: #4ecca3; /* Change to a vibrant color on hover */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .contact-row {
+        gap: 20px;
+    }
+
+    .social-row {
+        gap: 15px;
+    }
+
+    .contact-item {
+        width: 90%; /* Full width for smaller screens */
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-item {
+        width: 100%; /* Full width for mobile screens */
+        padding: 20px;
+    }
+
+    .contact-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .contact-item p {
+        font-size: 1rem;
+    }
 }
 
 /* Animation for Heading */
@@ -106,35 +187,5 @@
     }
     100% {
         text-shadow: 0 0 25px #4ecca3, 0 0 35px #00b0b9;
-    }
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-    #contact-section .contact-info {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #contact-section .contact-info .contact-icon {
-        margin: 15px;
-    }
-
-    #contact-section .ftco-footer-social a {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    #contact-section .heading-section h1 {
-        font-size: 2rem;
-    }
-
-    #contact-section .heading-section h2 {
-        font-size: 1.5rem;
-    }
-
-    #contact-section .btn {
-        font-size: 1rem;
     }
 }

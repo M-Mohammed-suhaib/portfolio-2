@@ -24,6 +24,7 @@
     color: #0cd8ce;
     text-transform: uppercase;
     letter-spacing: 3px;
+    text-align: center;
     text-shadow: 0 0 10px #4ecca3, 0 0 20px #00b0b9, 0 0 30px #4ecca3;
 }
 
@@ -65,17 +66,43 @@
     box-shadow: 0 12px 40px rgba(144, 202, 249, 0.8);
 }
 
-/* Title (Project Title) */
-.project-tree h2 {
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    font-weight: bold;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0;
-    margin-bottom: 10px;
-    text-shadow: 0px 4px 8px rgba(14, 123, 121, 0.8);
+/* Main title styling for Project Tree */
+.project-tree .main-title {
+    margin-bottom: 20px;
 }
+
+.project-tree .main-title h1 {
+    font-size: clamp(2rem, 5vw, 4rem); /* Scalable font size */
+    font-weight: bold;
+    color: #f0eff2;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 0 0 15px #4ecca3, 0 0 25px #00b0b9, 0 0 35px #ff4c4c; /* Glowing text with multiple colors */
+    animation: glow 1.5s ease-in-out infinite alternate, slideIn 1s ease-out; /* Add animations */
+}
+
+/* Keyframes for Glow Animation */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #4ecca3, 0 0 20px #00b0b9, 0 0 30px #4ecca3;
+    }
+    100% {
+        text-shadow: 0 0 25px #4ecca3, 0 0 35px #00b0b9, 0 0 45px #ff4c4c;
+    }
+}
+
+/* Keyframes for Slide In Effect */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 
 /* Image inside the box */
 .project-tree .thumbnail {
@@ -160,7 +187,7 @@
 
 /* Button Styling */
 .ftco-section.ftco-hireme .btn {
-    background-color: #2797b0; /* Accent color */
+    background-color: #fdffff; /* Accent color */
     color: white;
     font-weight: bold;
     padding: 12px 30px;
