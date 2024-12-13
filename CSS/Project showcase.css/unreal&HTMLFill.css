@@ -51,8 +51,6 @@ body {
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
     padding: 20px;
     margin-top: 20px;
-    opacity: 0;
-    transform: translateY(20px);
     animation: fadeInUp 1s ease forwards;
 }
 
@@ -85,7 +83,12 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
     max-width: 300px;
     width: 100%;
+    height: 400px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .project:hover {
@@ -94,6 +97,7 @@ body {
 }
 
 .project h2 {
+    text-align: center;
     color: #ffffff;
     font-size: 1.3em;
     margin: 0;
@@ -101,66 +105,9 @@ body {
     border-bottom: 1px solid #555;
     background-color: rgba(0, 0, 0, 0.6);
     font-weight: 600;
-}
-
-/* Video Container */
-.video-container {
     width: 100%;
-    position: relative;
-    cursor: pointer;
 }
 
-.thumbnail {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.thumbnail:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.5);
-}
-
-/* Play Icon */
-.play-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2em;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 20%;
-    padding: 10px;
-    transition: background-color 0.9s;
-    pointer-events: none; /* Prevent play icon from blocking click */
-}
-
-.play-icon:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.video-container video {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    display: none;
-}
-
-/* Description */
-.description {
-    padding: 15px;
-    font-size: 1em;
-    color: #e3e3e3;
-    line-height: 1.6;
-}
-
-.description p {
-    margin: 0;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
     h1 {
         font-size: 1.5em;
@@ -172,6 +119,91 @@ body {
 
     .home-button {
         padding: 8px 12px;
-        font-size: 0.9em;
-    }
+        font-size: 0.9em;
+    }
 }
+
+/* Video Container */
+.video-container {
+    width: 100%;
+    height: 180px;
+    position: relative;
+    cursor: pointer;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+video:fullscreen {
+    width: 100%;
+    height: 100%;
+}
+
+
+.thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.5);
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+    pointer-events: none;
+}
+
+.description {
+    padding: 10px;
+    font-size: 1em;
+    color: #e3e3e3;
+    line-height: 1.6; /* Adjust line height for better readability */
+    max-height: 3.2em; /* Height for two lines of text */
+    overflow-y: auto; /* Enable scrolling if text exceeds max height */
+    scrollbar-width: thin; /* Custom scrollbar width for modern browsers */
+    scrollbar-color: #555 #2e2e2e; /* Custom scrollbar colors */
+    text-align: justify; /* Aligns text evenly for a clean look */
+    word-wrap: break-word; /* Ensures long words break smoothly */
+    word-break: break-word; /* Breaks long words without overflowing */
+    hyphens: auto; /* Adds hyphens for better word breaks */
+    border-radius: 4px; /* Smooth corners for the description box */
+    background-color: rgba(0, 0, 0, 0.4); /* Slightly transparent background */
+}
+
+.description p {
+    margin: 0;
+}
+
+/* For Webkit Browsers (Chrome, Edge, Safari) */
+.description::-webkit-scrollbar {
+    width: 8px;
+}
+
+.description::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+.description::-webkit-scrollbar-track {
+    background-color: #2e2e2e;
+}
+
+
+

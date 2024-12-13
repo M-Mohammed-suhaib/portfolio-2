@@ -19,3 +19,5 @@ const observer = new IntersectionObserver((entries, observer) => {
 projectNodes.forEach(node => {
     observer.observe(node);
 });
+
+

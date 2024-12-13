@@ -48,7 +48,7 @@ body {
     background: rgba(0, 0, 0, 0.9);
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
-    padding: 20px;
+    padding: 35px;
     margin-top: 20px;
     opacity: 0;
     transform: translateY(20px);
@@ -109,17 +109,37 @@ body {
     padding: 10px;
     font-size: 1em;
     color: #e3e3e3;
-    line-height: 1.6;
+    line-height: 1.6; /* Adjust line height for better readability */
+    max-height: 3.2em; /* Height for two lines of text */
+    overflow-y: auto; /* Enable scrolling if text exceeds max height */
+    scrollbar-width: thin; /* Custom scrollbar width for modern browsers */
+    scrollbar-color: #555 #2e2e2e; /* Custom scrollbar colors */
+    text-align: justify; /* Aligns text evenly for a clean look */
+    word-wrap: break-word; /* Ensures long words break smoothly */
+    word-break: break-word; /* Breaks long words without overflowing */
+    hyphens: auto; /* Adds hyphens for better word breaks */
+    border-radius: 4px; /* Smooth corners for the description box */
+    background-color: rgba(0, 0, 0, 0.4); /* Slightly transparent background */
 }
 
 .description p {
     margin: 0;
 }
 
-/* Image and Fullscreen */
-.image-container {
-    margin-bottom: 20px;
+/* For Webkit Browsers (Chrome, Edge, Safari) */
+.description::-webkit-scrollbar {
+    width: 8px;
 }
+
+.description::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+.description::-webkit-scrollbar-track {
+    background-color: #2e2e2e;
+}
+
 
 .project-image {
     width: 100%;

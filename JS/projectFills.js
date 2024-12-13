@@ -26,46 +26,91 @@ function openFullscreen(imageId) {
 }
 
 
-// Function to show the video when the thumbnail is clicked
-function showVideo(videoContainer) {
-    const thumbnail = videoContainer.querySelector('.thumbnail');
-    const playIcon = videoContainer.querySelector('.play-icon');
-    const video = videoContainer.querySelector('video');
-    
-    // Hide the thumbnail and play icon
-    thumbnail.style.display = 'none';
-    playIcon.style.display = 'none';
 
-    // Show the video
-    video.style.display = 'block';
 
-    // Play the video
-    video.play();
 
-    // Add event listeners for when the video is paused or ended
-    video.addEventListener('pause', function () {
-        resetThumbnailAfterDelay(videoContainer);
-    });
 
-    video.addEventListener('ended', function () {
-        resetThumbnailAfterDelay(videoContainer);
-    });
-}
 
-// Function to reset the thumbnail after a delay of 15 seconds when the video is stopped (paused or ended)
-function resetThumbnailAfterDelay(videoContainer) {
-    const delay = 5000; // 15 seconds delay
-    const thumbnail = videoContainer.querySelector('.thumbnail');
-    const playIcon = videoContainer.querySelector('.play-icon');
-    const video = videoContainer.querySelector('video');
-    
-    // Wait for 15 seconds before resetting the thumbnail and play icon
-    setTimeout(function () {
-        // Show the thumbnail and play icon again only if the video is not playing
-        if (video.paused || video.ended) {
-            thumbnail.style.display = 'block';
-            playIcon.style.display = 'block';
-            video.style.display = 'none';  // Hide the video
+
+function showVideo(container) {
+    const videoElement = container.querySelector("video");
+    const thumbnail = container.querySelector(".thumbnail");
+    const playIcon = container.querySelector(".play-icon");
+    const videoSource = videoElement.querySelector("source").src;
+
+    // Check if the URL is a YouTube URL
+    if (videoSource.includes("youtube.com") || videoSource.includes("youtu.be")) {
+        let videoId = "";
+
+        if (videoSource.includes("youtube.com")) {
+            const urlParams = new URLSearchParams(new URL(videoSource).search);
+            videoId = urlParams.get("v"); // Extract video ID
+        } else if (videoSource.includes("youtu.be")) {
+            videoId = videoSource.split("/").pop(); // Extract video ID
         }
-    }, delay);
+
+        if (videoId) {
+            // Replace container content with an iframe
+            container.innerHTML = `
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
+                    frameborder="0" 
+                    allow="autoplay; encrypted-media" 
+                    allowfullscreen>
+                </iframe>`;
+        } else {
+            alert("Invalid YouTube URL");
+        }
+    } else if (videoSource.includes("drive.google.com")) {
+        // Handle Google Drive video URL
+        thumbnail.style.display = "none";
+        playIcon.style.display = "none";
+        videoElement.style.display = "block";
+        videoElement.play();
+
+        // Handle fullscreen and stopping Google Drive videos
+        videoElement.onfullscreenchange = function() {
+            if (document.fullscreenElement) {
+                // Fullscreen is active
+                videoElement.style.height = "100vh"; // Adjust height for fullscreen
+            } else {
+                // Exit fullscreen
+                videoElement.style.height = "auto"; // Restore height
+            }
+        };
+
+        // You can add custom controls for stopping the video if needed:
+        const stopButton = document.createElement("button");
+        stopButton.textContent = "Stop";
+        stopButton.style.position = "absolute";
+        stopButton.style.top = "10px";
+        stopButton.style.right = "10px";
+        stopButton.style.background = "#333";
+        stopButton.style.color = "#fff";
+        stopButton.style.padding = "10px";
+        stopButton.style.border = "none";
+        stopButton.style.borderRadius = "5px";
+        stopButton.style.cursor = "pointer";
+        container.appendChild(stopButton);
+
+        stopButton.onclick = function() {
+            videoElement.pause();
+            videoElement.currentTime = 0;
+            videoElement.style.display = "none";
+            thumbnail.style.display = "block";
+            playIcon.style.display = "block";
+        };
+    } else {
+        // Handle regular video playback
+        thumbnail.style.display = "none";
+        playIcon.style.display = "none";
+        videoElement.style.display = "block";
+        videoElement.play();
+    }
 }
+
+
+
+
