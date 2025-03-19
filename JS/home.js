@@ -2,7 +2,7 @@
 const typingAnimationElement = document.getElementById('typing-animation');
 
 // Create an array of typing text
-const typingTexts = ['Web Developer', 'VR Developer', 'Game Developer'];
+const typingTexts = ['Web Developer', 'Game Developer', ];
 
 // Create a function to display the typing animation for a given text
 function playTypingAnimation(text) {
